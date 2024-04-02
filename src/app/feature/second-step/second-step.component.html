@@ -1,0 +1,28 @@
+<h1>Step 2: Select your config and options</h1>
+@if(options$ | async; as options) {
+<label for="configSelect">Config: </label>
+<select id="configSelect" [formControl]="configId">
+  <option [value]="null">Choose...</option>
+  @for(config of options.configs; track config) {
+  <option [value]="config.id">{{ config.description }}</option>
+  }
+</select>
+} @if(config()) {
+<div>
+  <span>Range {{ config()?.range }} miles</span> -
+  <span>Max speed: {{ config()?.speed }}</span> -
+  <span
+    >Cost: {{ config()?.price | currency : "USD" : "symbol" : "1.2-2" }}</span
+  >
+</div>
+} @if (options?.towHitch) {
+<div>
+  <label for="includeTow">Tow hitch?</label>
+  <input id="includeTow" type="checkbox" [formControl]="hasTowHitch" />
+</div>
+} @if (options?.yoke) {
+<div>
+  <label for="includeYoke">Yoke steering wheel?</label>
+  <input id="includeYoke" type="checkbox" [formControl]="hasYoke" />
+</div>
+}

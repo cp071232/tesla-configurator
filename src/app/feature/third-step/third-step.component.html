@@ -1,0 +1,33 @@
+<h1>Step 3: Summary</h1>
+<h3>Your Tesla {{ model()?.description }}</h3>
+<div class="options">
+  <div>
+    <span>{{ config()?.description }}</span>
+    <span>{{ config()?.price | currency : "USD" : "symbol" : "1.2-2" }}</span>
+  </div>
+  <div class="font-normal">
+    Range: {{ config()?.range }} miles - Max speed:
+    {{ config()?.speed }}
+  </div>
+  <div>
+    <span>{{ color()?.description }} Color</span>
+    <span>{{ color()?.price | currency : "USD" : "symbol" : "1.2-2" }}</span>
+  </div>
+  @if(hasTowHitch()) {
+  <div>
+    <span>Tow Hitch Package</span>
+    <span>{{ 1000 | currency : "USD" : "symbol" : "1.2-2" }}</span>
+  </div>
+  } @if(hasYoke()) {
+  <div>
+    <span>Yoke Steering Wheel</span>
+    <span>{{ 1000 | currency : "USD" : "symbol" : "1.2-2" }}</span>
+  </div>
+  }
+  <hr />
+  <div>
+    <span>TOTAL COST</span>
+    <span>{{ total() | currency : "USD" : "symbol" : "1.2-2" }}</span>
+  </div>
+  <hr />
+</div>

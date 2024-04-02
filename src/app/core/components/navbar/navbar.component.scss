@@ -1,0 +1,26 @@
+.btn-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.step-btn {
+  width: 33%;
+  height: 50px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.tab:hover {
+  background-color: #222222;
+  cursor: pointer;
+}
+
+.tab:disabled {
+  cursor: not-allowed;
+}
+
+.active {
+  background-color: #333333;
+}

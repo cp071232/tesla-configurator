@@ -1,0 +1,28 @@
+<div class="btn-list">
+  <button
+    id="step1"
+    class="step-btn"
+    routerLink="/step1"
+    routerLinkActive="active"
+  >
+    Step 1
+  </button>
+  <button
+    id="step2"
+    class="step-btn"
+    routerLink="/step2"
+    routerLinkActive="active"
+    [disabled]="!model() || !color()"
+  >
+    Step 2
+  </button>
+  <button
+    id="step3"
+    class="step-btn"
+    routerLink="/step3"
+    routerLinkActive="active"
+    [disabled]="!config()"
+  >
+    Step 3
+  </button>
+</div>
